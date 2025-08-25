@@ -4,59 +4,157 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>درباره ما | آکادمی الماس</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css" />
+<style>
+  body {
+    margin: 0;
+    font-family: 'Vazirmatn', sans-serif;
+    background: #fdfdfd;
+    color: #333;
+    direction: rtl;
+  }
+  header {
+    background: #0a2a43;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header .brand {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #FFD700;
+    text-decoration: none;
+  }
+  header .brand span { color: #FFD700; }
+  header nav a {
+    color: white;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  header nav a:hover,
+  header nav a.active { color: #FFD700; }
+  .mobile-toggle {
+    display: none;
+    background: #FFD700;
+    border: none;
+    color: #0a2a43;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  section {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: auto;
+  }
+  section h2 {
+    color: #0a2a43;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    border-right: 5px solid #FFD700;
+    padding-right: 10px;
+  }
+  .hero {
+    background: linear-gradient(rgba(10,42,67,0.05), rgba(10,42,67,0.05));
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+  .hero h1 { color: #0a2a43; margin-bottom: 1rem; }
+  .hero p { color: #333; line-height: 1.6; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  .card h3 { color: #0a2a43; margin-top:0; }
+  footer {
+    background: #0a2a43;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  footer span { color: #FFD700; font-weight: bold; }
+  @media(max-width:768px) {
+    header { flex-direction: column; align-items: flex-start; }
+    header nav { margin-top: 1rem; display: flex; flex-wrap: wrap; gap:10px; }
+    .mobile-toggle { display: block; }
+  }
+</style>
 </head>
 <body>
-<header class="header">
-<div class="container header-inner">
-<a class="brand" href="index.html"><div class="logo">◆</div><div>آکادمی <span>الماس</span></div></a>
-<nav class="nav" id="site-nav">
-<a href="index.html">خانه</a>
-<a href="services.html">خدمات</a>
-<a href="plans.html">طرح‌ها</a>
-<a class="active" href="about.html">درباره ما</a>
-<a href="contact.html">تماس</a>
-</nav>
-<button class="mobile-toggle" id="nav-toggle">منو</button>
-</div>
+
+<header>
+  <a class="brand" href="index.html">◆ آکادمی <span>الماس</span></a>
+  <nav id="site-nav">
+    <a href="index.html">خانه</a>
+    <a href="services.html">خدمات</a>
+    <a href="plans.html">طرح‌ها</a>
+    <a class="active" href="about.html">درباره ما</a>
+    <a href="contact.html">تماس</a>
+  </nav>
+  <button class="mobile-toggle" id="nav-toggle">منو</button>
 </header>
 
-
 <main class="container">
-<section class="hero" style="padding:28px 20px">
-<h1>درباره آکادمی الماس</h1>
-<p>آکادمی الماس با مدیریت <strong>محمد حق‌وردی</strong> در حوزه <strong>مشاوره تحصیلی</strong> و <strong>تدریس</strong> فعالیت می‌کند. مأموریت ما: توانمندسازی یادگیرندگان برای رسیدن به نتایج پایدار.</p>
-</section>
+  <section class="hero">
+    <h1>درباره آکادمی الماس</h1>
+    <p>آکادمی الماس با مدیریت <strong>محمد حق‌وردی</strong> در حوزه <strong>مشاوره تحصیلی</strong> و <strong>تدریس</strong> فعالیت می‌کند. مأموریت ما: توانمندسازی یادگیرندگان برای رسیدن به نتایج پایدار.</p>
+  </section>
 
-
-<section class="section">
-<h2>رویکرد ما</h2>
-<div class="grid mt-16">
-<div class="card col-6">
-<h3>شخصی‌سازی</h3>
-<p>هر دانش‌آموز/دانشجو مسیر و نیازهای خاص خود را دارد؛ ما برنامه‌ها را دقیقاً بر همان اساس تنظیم می‌کنیم.</p>
-</div>
-<div class="card col-6">
-<h3>اندازه‌گیری و بهبود</h3>
-<p>پیشرفت با شاخص‌های روشن سنجیده می‌شود و برنامه‌ها به‌صورت پویا به‌روزرسانی می‌گردند.</p>
-</div>
-<div class="card col-6">
-<h3>یادگیری فعال</h3>
-<p>به‌جای حفظ طوطی‌وار، تمرکز بر درک مفهومی، تمرین مرحله‌ای و حل مسئله است.</p>
-</div>
-<div class="card col-6">
-<h3>همراهی انسانی</h3>
-<p>ارتباط گرم و محترمانه با خانواده و دانش‌آموز برای ساختن عادت‌های درست مطالعه.</p>
-</div>
-</div>
-</section>
+  <section class="section">
+    <h2>رویکرد ما</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>شخصی‌سازی</h3>
+        <p>هر دانش‌آموز/دانشجو مسیر و نیازهای خاص خود را دارد؛ ما برنامه‌ها را دقیقاً بر همان اساس تنظیم می‌کنیم.</p>
+      </div>
+      <div class="card">
+        <h3>اندازه‌گیری و بهبود</h3>
+        <p>پیشرفت با شاخص‌های روشن سنجیده می‌شود و برنامه‌ها به‌صورت پویا به‌روزرسانی می‌گردند.</p>
+      </div>
+      <div class="card">
+        <h3>یادگیری فعال</h3>
+        <p>به‌جای حفظ طوطی‌وار، تمرکز بر درک مفهومی، تمرین مرحله‌ای و حل مسئله است.</p>
+      </div>
+      <div class="card">
+        <h3>همراهی انسانی</h3>
+        <p>ارتباط گرم و محترمانه با خانواده و دانش‌آموز برای ساختن عادت‌های درست مطالعه.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
+<footer>
+  <div>© ۲۰۲۵ <strong>آکادمی الماس</strong> — مدیریت: محمد حق‌وردی</div>
+</footer>
 
-<footer class="footer"><div class="container footer-inner">© ۲۰۲۵ <strong>آکادمی الماس</strong> — مدیریت: محمد حق‌وردی</div></footer>
-<script>document.getElementById('nav-toggle')?.addEventListener('click',()=>document.getElementById('site-nav').classList.toggle('open'));</script>
+<script>
+  document.getElementById('nav-toggle')?.addEventListener('click', () => {
+    document.getElementById('site-nav').classList.toggle('open');
+  });
+</script>
+
 </body>
 </html>

@@ -1,167 +1,205 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>آکادمی الماس | مشاور تحصیلی و مدرس</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Vazirmatn', sans-serif;
-      background: #fdfdfd;
-      color: #333;
-      direction: rtl;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آکادمی الماس</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Vazirmatn', sans-serif;
+    background: #fdfdfd;
+    color: #333;
+    direction: rtl;
+  }
+  header {
+    background: #0a2a43;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #FFD700;
+  }
+  nav a {
+    color: white;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #FFD700;
+  }
+  section {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: auto;
+  }
+  section h2 {
+    color: #0a2a43;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    border-right: 5px solid #FFD700;
+    padding-right: 10px;
+  }
+  .intro {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(rgba(10,42,67,0.8), rgba(10,42,67,0.8)), url('https://picsum.photos/1200/400?blur') center/cover;
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+  }
+  .intro h2 {
+    font-size: 2rem;
+    color: #FFD700;
+  }
+  .intro p {
+    font-size: 1.1rem;
+  }
+  .services, .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  .card h3 {
+    margin-top: 0;
+    color: #0a2a43;
+  }
+  .actions {
+    margin-top: 2rem;
+  }
+  .actions a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: #FFD700;
+    color: #0a2a43;
+  }
+  .btn-primary:hover {
+    background: #e6c200;
+  }
+  .btn-ghost {
+    background: transparent;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+  }
+  .btn-ghost:hover {
+    background: #FFD700;
+    color: #0a2a43;
+  }
+  footer {
+    background: #0a2a43;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  footer span {
+    color: #FFD700;
+    font-weight: bold;
+  }
+  @media(max-width:768px) {
+    .services, .plans {
+      grid-template-columns: 1fr;
     }
     header {
-      background: #0a2a43;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      flex-direction: column;
+      align-items: flex-start;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-      color: #FFD700;
+    nav {
+      margin-top: 1rem;
     }
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #FFD700;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    section h2 {
-      color: #0a2a43;
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-      border-right: 5px solid #FFD700;
-      padding-right: 10px;
-    }
-    .intro {
-      text-align: center;
-      padding: 5rem 2rem;
-      background: linear-gradient(rgba(10,42,67,0.8), rgba(10,42,67,0.8)), url('https://picsum.photos/1200/400?blur') center/cover;
-      color: white;
-      border-radius: 12px;
-      margin-bottom: 3rem;
-    }
-    .intro h2 {
-      font-size: 2rem;
-      color: #FFD700;
-    }
-    .intro p {
-      font-size: 1.1rem;
-    }
-    .services, .plans {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #0a2a43;
-    }
-    footer {
-      background: #0a2a43;
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-    footer span {
-      color: #FFD700;
-      font-weight: bold;
-    }
-  </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css" />
-<meta name="description" content="آکادمی الماس با مدیریت محمد حق‌وردی – مشاور تحصیلی و مدرس. برنامه‌ریزی درسی، انتخاب رشته، و کلاس‌های تخصصی." />
+  }
+</style>
 </head>
 <body>
-<header class="header">
-<div class="container header-inner">
-<a class="brand" href="index.html" aria-label="خانه">
-<div class="logo">◆</div>
-<div>آکادمی <span>الماس</span></div>
-</a>
-<nav class="nav" id="site-nav">
-<a class="active" href="index.html">خانه</a>
-<a href="services.html">خدمات</a>
-<a href="plans.html">طرح‌ها</a>
-<a href="about.html">درباره ما</a>
-<a href="contact.html">تماس</a>
-</nav>
-<button class="mobile-toggle" id="nav-toggle" aria-label="باز و بسته کردن منو">منو</button>
-</div>
+
+<header>
+  <h1>آکادمی الماس</h1>
+  <nav>
+    <a href="#intro">خانه</a>
+    <a href="#services">خدمات</a>
+    <a href="#plans">طرح‌ها</a>
+    <a href="#contact">تماس</a>
+    <a href="#about">درباره ما</a>
+  </nav>
 </header>
 
-
-<main class="container">
-<section class="hero">
-<h1>مشاور تحصیلی و مدرس — <span style="color:#fff">محمد حق‌وردی</span></h1>
-<p>همراه شما در مسیر انتخاب رشته، برنامه‌ریزی درسی و یادگیری مؤثر. آکادمی الماس با رویکردی علمی و متناسب با نیاز شما.</p>
-<div class="actions">
-<a class="btn btn-primary" href="services.html">مشاهده خدمات</a>
-<a class="btn btn-ghost" href="plans.html">مشاهده طرح‌ها</a>
-</div>
+<section class="intro" id="intro">
+  <h2>مشاور تحصیلی و مدرس — محمد حق‌وردی</h2>
+  <p>همراه شما در مسیر انتخاب رشته، برنامه‌ریزی درسی و یادگیری مؤثر. آکادمی الماس با رویکردی علمی و متناسب با نیاز شما.</p>
+  <div class="actions">
+    <a class="btn-primary" href="#services">مشاهده خدمات</a>
+    <a class="btn-ghost" href="#plans">مشاهده طرح‌ها</a>
+  </div>
 </section>
 
-
-<section class="section" id="home-services">
-<h2>خدمات منتخب</h2>
-<p class="muted mt-8">مروری سریع بر دو خدمت اصلی آکادمی الماس. برای جزئیات بیشتر به صفحه <a href="services.html">خدمات</a> بروید.</p>
-<div class="grid mt-16">
-<div class="card col-6 col-4">
-<h3>مشاوره تحصیلی</h3>
-<p>انتخاب رشته، برنامه‌ریزی درسی، مدیریت زمان و تکنیک‌های مطالعه. ویژه دانش‌آموزان و دانشجویان.</p>
-<div class="row-actions">
-<a class="btn btn-primary" href="services.html#academic">جزئیات بیشتر</a>
-</div>
-</div>
-<div class="card col-6 col-4">
-<h3>تدریس و کلاس‌ها</h3>
-<p>کلاس‌های تقویتی خصوصی/گروهی، آمادگی امتحان و رفع اشکال با روش‌های آموزش فعال.</p>
-<div class="row-actions">
-<a class="btn btn-primary" href="services.html#teaching">جزئیات بیشتر</a>
-</div>
-</div>
-</div>
+<section class="services" id="services">
+  <h2>خدمات منتخب</h2>
+  <div class="services">
+    <div class="card">
+      <h3>مشاوره تحصیلی</h3>
+      <p>انتخاب رشته، برنامه‌ریزی درسی، مدیریت زمان و تکنیک‌های مطالعه. ویژه دانش‌آموزان و دانشجویان.</p>
+      <a class="btn-primary" href="services.html#academic">جزئیات بیشتر</a>
+    </div>
+    <div class="card">
+      <h3>تدریس و کلاس‌ها</h3>
+      <p>کلاس‌های تقویتی خصوصی/گروهی، آمادگی امتحان و رفع اشکال با روش‌های آموزش فعال.</p>
+      <a class="btn-primary" href="services.html#teaching">جزئیات بیشتر</a>
+    </div>
+  </div>
 </section>
 
+<section class="plans" id="plans">
+  <h2>طرح‌ها</h2>
+  <div class="plans">
+    <div class="card">
+      <h3>طرح پایه مشاوره</h3>
+      <p>۱ جلسه ۶۰ دقیقه‌ای به همراه برنامه‌ریزی یک‌هفته‌ای و گزارش جمع‌بندی.</p>
+      <a class="btn-ghost" href="plans.html#basic">مشاهده جزئیات</a>
+    </div>
+    <div class="card">
+      <h3>طرح پیشرفته مشاوره</h3>
+      <p>۴ جلسه در ماه + پیگیری هفتگی + اصلاح برنامه و پاسخ به سوالات بین جلسات.</p>
+      <a class="btn-ghost" href="plans.html#pro">مشاهده جزئیات</a>
+    </div>
+    <div class="card">
+      <h3>کلاس خصوصی</h3>
+      <p>جلسات ۹۰ دقیقه‌ای تک‌نفره با تمرکز بر مباحث مورد نیاز شما (آنلاین/حضوری).</p>
+      <a class="btn-ghost" href="plans.html#class">مشاهده جزئیات</a>
+    </div>
+  </div>
+</section>
 
-<section class="section" id="home-plans">
-<h2>طرح‌ها</h2>
-<p class="muted mt-8">گزینه‌های انعطاف‌پذیر برای نیازهای متفاوت. برای مقایسه کامل، به صفحه <a href="plans.html">طرح‌ها</a> بروید.</p>
-<div class="grid mt-16">
-<div class="card col-6 col-4">
-<h3>طرح پایه مشاوره</h3>
-<p>۱ جلسه ۶۰ دقیقه‌ای به همراه برنامه‌ریزی یک‌هفته‌ای و گزارش جمع‌بندی.</p>
-<div class="row-actions"><a class="btn btn-ghost" href="plans.html#basic">مشاهده جزئیات</a></div>
-</div>
-<div class="card col-6 col-4">
+<footer>
+  <p>© ۲۰۲۵ <span>آکادمی الماس</span> — مدیریت: محمد حق‌وردی</p>
+</footer>
+
+</body>
+</html>

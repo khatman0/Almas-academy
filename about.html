@@ -160,6 +160,18 @@
     document.getElementById('site-nav').classList.toggle('open');
   });
 </script>
+<script>
+  const nav = document.getElementById('site-nav');
+  const toggle = document.getElementById('nav-toggle');
+  const closeBtn = document.getElementById('nav-close');
 
+  toggle.addEventListener('click', () => {
+    nav.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    nav.classList.remove('open');
+  });
+</script>
 </body>
 </html>

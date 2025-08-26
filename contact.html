@@ -11,18 +11,21 @@
 <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-<header class="header">
-<div class="container header-inner">
-<a class="brand" href="index.html"><div class="logo">◆</div><div>آکادمی <span>الماس</span></div></a>
-<nav class="nav" id="site-nav">
-<a href="index.html">خانه</a>
-<a href="services.html">خدمات</a>
-<a href="plans.html">طرح‌ها</a>
-<a href="about.html">درباره ما</a>
-<a class="active" href="contact.html">تماس</a>
-</nav>
-<button class="mobile-toggle" id="nav-toggle">منو</button>
-</div>
+<header>
+  <h1>آکادمی الماس</h1>
+  
+  <!-- دکمه همبرگری -->
+  <button class="mobile-toggle" id="nav-toggle">☰</button>
+
+  <nav class="nav" id="site-nav">
+    <!-- دکمه بستن -->
+    <button class="close-btn" id="nav-close">×</button>
+    <a href="index.html">خانه</a>
+    <a href="services.html">خدمات</a>
+    <a href="plans.html">طرح‌ها</a>
+    <a href="about.html">درباره ما</a>
+    <a href="contact.html">تماس</a>
+  </nav>
 </header>
 
 
@@ -51,5 +54,18 @@
 </main>
 <footer class="footer"><div class="container footer-inner">© 2025<strong>آکادمی الماس</strong>-مدیریت: محمد حقوردی</div></footer>
 <script>document.getelementbyid('nav-toggle')?.addeventlistener('click',()=>document.getelementbyid('site-nav').classlist.toggle('open'));</script>
+<script>
+  const nav = document.getElementById('site-nav');
+  const toggle = document.getElementById('nav-toggle');
+  const closeBtn = document.getElementById('nav-close');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    nav.classList.remove('open');
+  });
+  </script>
 </body>
 </html>

@@ -10,12 +10,18 @@
 
 <header>
   <h1>آکادمی الماس</h1>
-  <nav>
-    <a href="#intro">خانه</a>
-    <a href="#services">خدمات</a>
-    <a href="#plans">طرح‌ها</a>
-    <a href="contact.html">تماس</a>
+  
+  <!-- دکمه همبرگری -->
+  <button class="mobile-toggle" id="nav-toggle">☰</button>
+
+  <nav class="nav" id="site-nav">
+    <!-- دکمه بستن -->
+    <button class="close-btn" id="nav-close">×</button>
+    <a href="index.html">خانه</a>
+    <a href="services.html">خدمات</a>
+    <a href="plans.html">طرح‌ها</a>
     <a href="about.html">درباره ما</a>
+    <a href="contact.html">تماس</a>
   </nav>
 </header>
 
@@ -69,5 +75,18 @@
   <p>تمام حقوق متعلق به آکادمی الماس © 2025</p>
 </footer>
 
+  <script>
+  const nav = document.getElementById('site-nav');
+  const toggle = document.getElementById('nav-toggle');
+  const closeBtn = document.getElementById('nav-close');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    nav.classList.remove('open');
+  });
+  </script>
 </body>
 </html>
